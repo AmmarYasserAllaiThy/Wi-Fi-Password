@@ -2,10 +2,15 @@
 
 ![Wi-Fi icon](/src/images/icons8_Wi-Fi_Lock_30px.png)
 
-``` java
-private static void start() {
-  //do something
+```java
+private void refresh() {
+    if (osName.startsWith("Windows")) {
+        refreshInWindows();
+    } else if (osName.equals("Linux")) {
+        refreshInLinux();
+    }
+    fillNetworks(listOfNetworks);
 }
 ```
 
-Hello world
+This method refresh the networks then fill the list.
